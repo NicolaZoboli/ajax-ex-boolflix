@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Boolflix</title>
+
+  <script id="movie-template" type="text/x-handlebars-template">
+    <div class="movie">
+      <img src="https://image.tmdb.org/t/p/w94_and_h141_bestv2{{ poster_path }}" alt="">
+      <h3>{{ original_title }}</h3>
+      <span class="vote">{{ vote_average }}</span>
+      <span class="release-date">{{ release_date }}</span>
+    </div>
+  </script>
+</head>
+<body>
+
+  <div class="movies-container">
+
+  </div>
+
+
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>
