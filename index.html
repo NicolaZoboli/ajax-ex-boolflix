@@ -15,24 +15,38 @@
 
   <script id="movie-template" type="text/x-handlebars-template">
     <div class="movie">
+      <span>Movie</span>
       <img src="https://image.tmdb.org/t/p/w94_and_h141_bestv2{{ poster_path }}" alt="">
       <h2>Title: {{ title }}</h2>
-      <h3>Original Title:{{ original_title }}</h3>
-      <span>Language: {{ original_language }}</span>
-      <span>Vote: {{ vote_average }}</span>
+      <h3>Original Title: {{ original_title }}</h3>
+      <span>{{{ flag }}}</span>
+      <span>{{{ stars }}}</span>
     </div>
   </script>
+
+  <script id="serie-template" type="text/x-handlebars-template">
+    <div class="serie">
+      <span>Serie</span>
+      <img src="https://image.tmdb.org/t/p/w94_and_h141_bestv2{{ poster_path }}" alt="">
+      <h2>Title: {{ name }}</h2>
+      <h3>Original Title: {{ original_name }}</h3>
+      <span>{{{ flag }}}</span>
+      <span>{{{ stars }}}</span>
+    </div>
+  </script>
+
 </head>
 <body>
 
   <div class="searchbar-container">
-    <input id="serchbar" type="text" name="" value="">
+    <input id="serchbar" type="text" name="" value="spiderman">
     <button id="send" type="button" name="button">Search</button>
   </div>
 
-  <div class="movies-container">
+  <div class="movies-series-container">
 
   </div>
+  <!-- per far apparire i film sopra le serie devo creare due target diversi -->
 
 
   <script src="js/script.js" charset="utf-8"></script>
