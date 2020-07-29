@@ -28,6 +28,7 @@ function getMovies (query) {
     success: function (data, state) {
       var movies = data['results'];
 
+
       var template = $('#movie-template').html();
       var compiled = Handlebars.compile(template);
       var target = $('.movies-series-container');
