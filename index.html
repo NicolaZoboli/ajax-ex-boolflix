@@ -14,26 +14,25 @@
   <title>Boolflix</title>
 
   <script id="movie-template" type="text/x-handlebars-template">
-    <div class="movie">
+    <li class="movie">
       <span>Movie</span>
-      <img src="https://image.tmdb.org/t/p/w154{{ poster_path }}" alt="">
+      {{{ poster }}}
       <h2>Title: {{ title }}</h2>
       <h3>Original Title: {{ original_title }}</h3>
       <span>{{{ flag }}}</span>
       <span>{{{ stars }}}</span>
-    </div>
+    </li>
   </script>
-  <!-- https://image.tmdb.org/t/p/w94_and_h141_bestv2 -->
 
   <script id="serie-template" type="text/x-handlebars-template">
-    <div class="serie">
+    <li class="serie">
       <span>Serie</span>
-      <img src="https://image.tmdb.org/t/p/w154{{ poster_path }}" alt="">
+      {{{ poster }}}
       <h2>Title: {{ name }}</h2>
       <h3>Original Title: {{ original_name }}</h3>
       <span>{{{ flag }}}</span>
       <span>{{{ stars }}}</span>
-    </div>
+    </li>
   </script>
 
 </head>
@@ -44,10 +43,17 @@
     <button id="send" type="button" name="button">Search</button>
   </div>
 
-  <div class="movies-series-container">
+  <div class="movies-container">
+    <ul>
 
+    </ul>
   </div>
-  <!-- per far apparire i film sopra le serie devo creare due target diversi -->
+
+  <div class="series-container">
+    <ul>
+
+    </ul>
+  </div>
 
 
   <script src="js/script.js" charset="utf-8"></script>

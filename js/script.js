@@ -9,8 +9,11 @@ function startSearch() {
   var query = target.val();
   target.val('');
 
-  var targetResult = $('.movies-series-container');
-  targetResult.text('');
+  var targetResultMovies = $('.movies-container ul');
+  targetResultMovies.text('');
+
+  var targetResultSeries = $('.series-container ul');
+  targetResultSeries.text('');
 
   getMovies(query);
   getSeries(query);
@@ -31,7 +34,7 @@ function getMovies (query) {
 
       var template = $('#movie-template').html();
       var compiled = Handlebars.compile(template);
-      var target = $('.movies-series-container');
+      var target = $('.movies-container ul');
 
       for (var i = 0; i < movies.length; i++) {
         var movie = movies[i];
@@ -42,9 +45,11 @@ function getMovies (query) {
         var lang = movie['original_language'];
         movie['flag'] = getFlag(lang);
 
+        var poster = movie['poster_path'];
+        movie['poster'] = getPosterHTML(poster);
+
         var movieHTML = compiled(movie);
         target.append(movieHTML);
-
 
       }
     },
@@ -70,7 +75,7 @@ function getSeries(query) {
 
       var template = $('#serie-template').html();
       var compiled = Handlebars.compile(template);
-      var target = $('.movies-series-container');
+      var target = $('.series-container ul');
 
       for (var i = 0; i < series.length; i++) {
         var serie = series[i];
@@ -81,9 +86,11 @@ function getSeries(query) {
         var lang = serie['original_language'];
         serie['flag'] = getFlag(lang);
 
+        var poster = serie['poster_path'];
+        serie['poster'] = getPosterHTML(poster);
+
         var serieHTML = compiled(serie);
         target.append(serieHTML);
-
 
       }
     },
@@ -119,6 +126,14 @@ function getFlag(lang) {
 
   return lang;
 
+}
+
+function getPosterHTML(poster) {
+
+  if (poster) {
+    return `<img src="https://image.tmdb.org/t/p/w154/${poster}">`;
+  }
+  return `<img src="img/picture-vector-icon-no-image-260nw-1350441335.webp">`;
 }
 
 
