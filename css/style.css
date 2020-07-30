@@ -4,12 +4,38 @@
   box-sizing: border-box;
 }
 
+header {
+
+  position: fixed;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 10vh;
+
+  background-color: black;
+
+  padding: 0 20px;
+}
+
+header h1 {
+  color: red;
+
+  font-size: 20px;
+}
+
+main {
+  padding-top: 10vh;
+
+  background-color: #434343;
+}
+
 .searchbar-container {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding-top: 30px;
 }
 
 .movies-container ul, .series-container ul {
@@ -18,7 +44,9 @@
   justify-content: space-around;
   flex-wrap: wrap;
 
-  padding: 50px;
+  overflow: auto;
+
+  padding-top: 30px;
 }
 
 .movie, .serie {
@@ -28,14 +56,40 @@
   justify-content: space-around;
   align-self: flex-start;
 
-  min-height: 500px;
-  width: calc(100%/3);
-  padding: 10px;
+  height: 513px;
+  width: 342px;
+  margin-bottom: 30px;
 
-  border: 1px solid black;
+  border: 1px solid white;
+
+  background-size: cover;
 }
 
 img.flag {
   width: 50px;
   height: 50px;
+}
+
+.hover-info {
+
+  display: none;
+
+  height: 513px;
+  width: 342px;
+  padding: 40px 20px;
+
+  font-size: 18px;
+  line-height: 25px;
+
+  border: 1px solid white;
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  color: white;
+
+  overflow: auto;
+}
+
+.movie:hover .hover-info, .serie:hover .hover-info {
+  display: block;
 }

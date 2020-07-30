@@ -38,6 +38,7 @@ function getMovies (query) {
 
       for (var i = 0; i < movies.length; i++) {
         var movie = movies[i];
+        console.log(movie);
 
         var vote = movie['vote_average'];
         movie['stars'] = getStars(vote);
@@ -131,9 +132,9 @@ function getFlag(lang) {
 function getPosterHTML(poster) {
 
   if (poster) {
-    return `<img src="https://image.tmdb.org/t/p/w154/${poster}">`;
+    return `https://image.tmdb.org/t/p/w342/${poster}`;
   }
-  return `<img src="img/picture-vector-icon-no-image-260nw-1350441335.webp">`;
+  return `img/not-found.png`;
 }
 
 

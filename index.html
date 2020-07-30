@@ -14,47 +14,53 @@
   <title>Boolflix</title>
 
   <script id="movie-template" type="text/x-handlebars-template">
-    <li class="movie">
-      <span>Movie</span>
-      {{{ poster }}}
-      <h2>Title: {{ title }}</h2>
-      <h3>Original Title: {{ original_title }}</h3>
-      <span>{{{ flag }}}</span>
-      <span>{{{ stars }}}</span>
+    <li class="movie" style="background-image:url({{{ poster }}})">
+      <div class="hover-info">
+        Titolo: {{ title }}<br>
+        Titolo Originale: {{ original_title }}<br>
+        Voto: {{{ stars }}}<br>
+        Overview: {{ overview }}
+      </div>
     </li>
   </script>
 
   <script id="serie-template" type="text/x-handlebars-template">
-    <li class="serie">
-      <span>Serie</span>
-      {{{ poster }}}
-      <h2>Title: {{ name }}</h2>
-      <h3>Original Title: {{ original_name }}</h3>
-      <span>{{{ flag }}}</span>
-      <span>{{{ stars }}}</span>
+    <li class="serie" style="background-image:url({{{ poster }}})">
+      <div class="hover-info">
+        Titolo: {{ name }}<br>
+        Titolo Originale: {{ original_name }}<br>
+        Voto: {{{ stars }}}<br>
+        Overview: {{ overview }}
+      </div>
+
     </li>
   </script>
 
 </head>
 <body>
 
-  <div class="searchbar-container">
-    <input id="serchbar" type="text" name="" value="spiderman">
-    <button id="send" type="button" name="button">Search</button>
-  </div>
+  <header>
+    <h1>BOOLFLIX</h1>
 
-  <div class="movies-container">
-    <ul>
+    <div class="searchbar-container">
+      <input id="serchbar" type="text" name="" value="spiderman">
+      <button id="send" type="button" name="button">Search</button>
+    </div>
+  </header>
 
-    </ul>
-  </div>
+  <main>
+    <div class="movies-container">
+      <ul>
 
-  <div class="series-container">
-    <ul>
+      </ul>
+    </div>
 
-    </ul>
-  </div>
+    <div class="series-container">
+      <ul>
 
+      </ul>
+    </div>
+  </main>
 
   <script src="js/script.js" charset="utf-8"></script>
 </body>
