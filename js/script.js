@@ -1,6 +1,23 @@
 function addSearchClickListener() {
   var searchBtn = $('#send');
   searchBtn.click(startSearch);
+
+  var target = $("#serchbar");
+  target.keyup(sendKeyup);
+}
+
+function sendKeyup(event) {
+
+  var key = event.which;
+  var input = $(this);
+  var txt = input.val();
+
+  if (key === 13 && txt) {
+
+    startSearch();
+
+    input.val("");
+  }
 }
 
 function startSearch() {
@@ -139,13 +156,8 @@ function getPosterHTML(poster) {
 
 
 function init() {
+
   addSearchClickListener();
-
-  // debug
-
-  startSearch();
-
-  // debug
 }
 
 $(document).ready(init);
